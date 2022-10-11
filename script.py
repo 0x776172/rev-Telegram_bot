@@ -62,9 +62,10 @@ def night(context: CallbackContext):
 
 j.run_daily(morning,days=(range(7)), time=dt.time(hour=6, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
 j.run_daily(noon,days=(range(7)), time=dt.time(hour=13, minute=30, tzinfo= pytz.timezone('Asia/Jakarta')))
-j.run_daily(night,days=(range(7)), time=dt.time(hour=19, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
+j.run_daily(night,days=(range(7)), time=dt.time(hour=22, minute=17, tzinfo= pytz.timezone('Asia/Jakarta')))
 start_handler = CommandHandler('start', start)
 stop_handler = CommandHandler('stop', stop)
 dp.add_handler(start_handler)
 dp.add_handler(stop_handler)
 updater.start_polling()
+updater.idle()
