@@ -32,14 +32,6 @@ def stop(update, context):
 #task
 j = updater.job_queue
 
-# def once(context: CallbackContext):
-#   msg = 'once'
-#   for user in db_keys:
-#     id = r.get(user).decode("UTF-8")
-#     context.bot.send_message(chat_id=id, text=msg)
-
-# j.run_once(once, 30)
-
 def morning(context: CallbackContext):
   msg = 'Jangan Lupa Sarapan'
   for user in db_keys:
