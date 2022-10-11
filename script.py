@@ -62,9 +62,9 @@ def night(context: CallbackContext):
     context.bot.send_message(chat_id=id, text=msg)
     context.bot.send_message(chat_id=id, text=msg2)
 
-j.run_daily(morning,days=(range(7)), time=dt.time(hour=06, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
+j.run_daily(morning,days=(range(7)), time=dt.time(hour=6, tzinfo= pytz.timezone('Asia/Jakarta')))
 j.run_daily(noon,days=(range(7)), time=dt.time(hour=13, minute=30, tzinfo= pytz.timezone('Asia/Jakarta')))
-j.run_daily(night,days=(range(7)), time=dt.time(hour=19, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
+j.run_daily(night,days=(range(7)), time=dt.time(hour=19, tzinfo= pytz.timezone('Asia/Jakarta')))
 start_handler = CommandHandler('start', start)
 stop_handler = CommandHandler('stop', stop)
 dp.add_handler(start_handler)
