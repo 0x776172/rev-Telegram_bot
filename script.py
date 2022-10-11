@@ -20,7 +20,7 @@ def start(update, context):
   user_id = update.message.from_user.id
   user_name = update.message.from_user.name
   r.set(user_name, user_id)
-  message = 'Bot Aktif1'
+  message = 'Bot Aktif'
   context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def stop(update, context):
@@ -56,13 +56,15 @@ def noon(context: CallbackContext):
 
 def night(context: CallbackContext):
   msg = 'Makan Malemnya!!'
+  msg2 = "Jangan Lupa!!!"
   for user in db_keys:
     id = r.get(user).decode('UTF-8')
     context.bot.send_message(chat_id=id, text=msg)
+    context.bot.send_message(chat_id=id, text=msg2)
 
-j.run_daily(morning,days=(range(7)), time=dt.time(hour=6, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
+j.run_daily(morning,days=(range(7)), time=dt.time(hour=06, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
 j.run_daily(noon,days=(range(7)), time=dt.time(hour=13, minute=30, tzinfo= pytz.timezone('Asia/Jakarta')))
-j.run_daily(night,days=(range(7)), time=dt.time(hour=22, minute=17, tzinfo= pytz.timezone('Asia/Jakarta')))
+j.run_daily(night,days=(range(7)), time=dt.time(hour=19, minute=00, tzinfo= pytz.timezone('Asia/Jakarta')))
 start_handler = CommandHandler('start', start)
 stop_handler = CommandHandler('stop', stop)
 dp.add_handler(start_handler)
