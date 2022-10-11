@@ -20,7 +20,7 @@ def start(update, context):
   user_id = update.message.from_user.id
   user_name = update.message.from_user.name
   r.set(user_name, user_id)
-  message = 'Bot Aktif'
+  message = 'Bot Aktif1'
   context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def stop(update, context):
